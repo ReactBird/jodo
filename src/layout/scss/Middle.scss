@@ -1,0 +1,744 @@
+@import '../../mixin.scss';
+$titlecolor: #111b28;
+$introcolor: #404040;
+
+//每个内容标题的样式
+@mixin titlestyle {
+    font-size: px2rem(46px);
+    margin-top: px2rem(113px);
+    color: $titlecolor;
+    font-family: MicrosoftYaHei-Bold;
+}
+
+
+
+.banner {
+    // height: px2rem(958px);
+    position: relative;
+}
+
+.mid-video {
+    vertical-align: bottom;
+    width: 100%;
+    // height: px2rem(958px);
+    object-fit: cover;
+
+}
+
+.mid-textbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: px2rem(863px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+
+    >img {
+        @include setWH(50px, 50px);
+    }
+
+    >span {
+        font-size: px2rem(66px);
+    }
+
+    .business-intro {
+        font-size: px2rem(32px);
+        margin-top: px2rem(43px);
+        margin-bottom: px2rem(44px);
+
+        // i {
+        //     &::before {
+        //         display: inline-block;
+        //         content: "";
+        //         border: 1px solid #ffffff;
+        //         height: 80%;
+        //         margin: 0 px2rem(12px);
+        //     }
+        // }
+        span+span::before {
+            content: "";
+            font-size: 0;
+            margin-left: px2rem(10px);
+            padding: px2rem(22px) px2rem(5px) px2rem(4px);
+            border-left: px2rem(2px) solid #ffffff;
+        }
+    }
+}
+
+// 故事板块
+.mid-story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f7f7f7;
+
+    // .mid-storyTitle {
+    //     @include titlestyle();
+    // }
+
+    >h4 {
+        @include titlestyle();
+    }
+
+    span {
+        font-size: px2rem(28px);
+        color: $introcolor;
+
+        &:nth-child(2) {
+            font-size: px2rem(28px);
+            margin: px2rem(31px) 0 px2rem(23px);
+        }
+    }
+
+    button {
+        @include setWH(300px, 66px);
+        background-color: #005fd5;
+        border-radius: px2rem(8px);
+        border: 0;
+        margin-top: px2rem(48px);
+        margin-bottom: px2rem(49px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        filter: brightness(88%);
+
+        &:hover,
+        &:active {
+            filter: brightness(1);
+        }
+
+
+        a {
+            font-size: px2rem(26px);
+            color: #ffffff;
+            text-decoration: none;
+            // 这里小尺寸会出现底部对齐
+        }
+    }
+
+    .map {
+        width: px2rem(730px);
+
+        position: relative;
+
+        img {
+            width: 100%;
+            vertical-align: bottom;
+        }
+
+        ul {
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            top: 0;
+
+            li {
+                position: absolute;
+                list-style: none;
+                // background: url(../../image/yuandian1.png);
+                @include setWH(35px, 35px);
+                background-size: cover;
+
+                // 圆点盒子
+                >div {
+                    background: url(../../image/yuandian1.png);
+                    @include setWH(35px, 35px);
+                    background-size: cover;
+                    animation: move 4s infinite linear;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+
+                @keyframes move {
+                    25% {
+                        transform: scale(1.1);
+                    }
+
+                    50% {
+                        transform: scale(1.2);
+                    }
+
+                    75% {
+                        transform: scale(1.1);
+                    }
+
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+
+                // 圆点
+                img {
+                    @include setWH(27px, 27px);
+                }
+
+                &:nth-child(1) {
+                    left: px2rem(40px);
+                    bottom: px2rem(-327px);
+
+                    &::before {
+                        content: "加拿大";
+                        position: absolute;
+                        bottom: -50%;
+                        white-space: nowrap;
+                        font-size: px2rem(12px);
+                        color: #404040;
+                        left: 12%;
+                    }
+                }
+
+                &:nth-child(2) {
+                    left: px2rem(-10px);
+                    bottom: px2rem(-260px);
+
+                    &::before {
+                        content: "美国";
+                        position: absolute;
+                        bottom: -50%;
+                        white-space: nowrap;
+                        font-size: px2rem(12px);
+                        color: #404040;
+                        left: 12%;
+                    }
+                }
+
+                &:nth-child(3) {
+                    left: px2rem(90px);
+                    bottom: px2rem(-215px);
+
+                    &::before {
+                        content: "巴西";
+                        position: absolute;
+                        bottom: -50%;
+                        white-space: nowrap;
+                        font-size: px2rem(12px);
+                        color: #404040;
+                        left: 12%;
+                    }
+                }
+
+                &:nth-child(4) {
+                    left: px2rem(122px);
+                    bottom: px2rem(-90px);
+
+                    &::before {
+                        content: "法国";
+                        position: absolute;
+                        bottom: -50%;
+                        white-space: nowrap;
+                        font-size: px2rem(12px);
+                        color: #404040;
+                        left: 12%;
+                    }
+                }
+
+                &:nth-child(5) {
+                    left: px2rem(360px);
+                    bottom: px2rem(-250px);
+
+                    &::before {
+                        content: "广州";
+                        position: absolute;
+                        bottom: -50%;
+                        white-space: nowrap;
+                        font-size: px2rem(12px);
+                        color: #404040;
+                        left: 12%;
+                    }
+                }
+
+                &:nth-child(6) {
+                    left: px2rem(495px);
+                    bottom: px2rem(-80px);
+
+                    &::before {
+                        content: "英国";
+                        position: absolute;
+                        bottom: -50%;
+                        white-space: nowrap;
+                        font-size: px2rem(12px);
+                        color: #404040;
+                        left: 12%;
+                    }
+                }
+
+                &:nth-child(7) {
+                    left: px2rem(610px);
+                    bottom: px2rem(-190px);
+
+                    &::before {
+                        content: "日本";
+                        position: absolute;
+                        bottom: -50%;
+                        white-space: nowrap;
+                        font-size: px2rem(12px);
+                        color: #404040;
+                        left: 12%;
+                    }
+                }
+
+                &:nth-child(8) {
+                    left: px2rem(680px);
+                    bottom: px2rem(-230px);
+
+                    &::before {
+                        content: "俄罗斯";
+                        position: absolute;
+                        bottom: -50%;
+                        white-space: nowrap;
+                        font-size: px2rem(12px);
+                        color: #404040;
+                        left: 12%;
+                    }
+                }
+
+                &:nth-child(9) {
+                    left: px2rem(625px);
+                    bottom: px2rem(-300px);
+
+                    &::before {
+                        content: "澳大利亚";
+                        position: absolute;
+                        bottom: -50%;
+                        white-space: nowrap;
+                        font-size: px2rem(12px);
+                        color: #404040;
+                        left: 12%;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+// 业务介绍板块
+.mid-business {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    >h4 {
+        @include titlestyle();
+    }
+
+    >span {
+
+        &:nth-child(2) {
+            font-size: px2rem(28px);
+            margin-top: px2rem(37px);
+            margin-bottom: px2rem(47px);
+            color: $introcolor ;
+        }
+    }
+
+
+}
+
+.mid-businesslist {
+    color: #ffffff;
+    display: flex;
+    // justify-content: space-around;
+    width: 100%;
+
+    .item1 {
+        display: flex;
+        flex-direction: column;
+        padding: px2rem(145px) px2rem(54px) px2rem(167px) px2rem(63px);
+        background: url(../../image/01.png) no-repeat;
+        background-size: cover;
+        margin-right: px2rem(1px);
+        width: px2rem(480px);
+        position: relative;
+
+        .maskbg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(14, 42, 71, .4);
+            z-index: 1;
+            display: none;
+        }
+
+        span,
+        p {
+            z-index: 2;
+        }
+
+        &:nth-child(1) {
+            &:hover .maskbg::before {
+                display: block;
+            }
+        }
+
+        &:nth-child(2) {
+            background: url(../../image/02.png);
+
+            &:hover .maskbg::before {
+                display: block;
+            }
+        }
+
+        &:nth-child(3) {
+            background: url(../../image/03.png);
+
+            &:hover .maskbg::before {
+                display: block;
+            }
+        }
+
+        &:last-child {
+            margin-right: 0;
+            background: url(../../image/04.png);
+
+            &:hover .maskbg::before {
+                display: block;
+            }
+
+        }
+
+
+
+
+        span {
+            font-family: 'MicrosoftYaHei-Bold';
+            font-size: px2rem(42px);
+
+            &:nth-child(1) {
+                margin-bottom: px2rem(38px);
+            }
+
+            &:nth-child(2) {
+                margin-bottom: px2rem(94px);
+                font-size: px2rem(36px);
+                padding-bottom: px2rem(30px);
+                position: relative;
+
+                &::after {
+                    content: "";
+                    font-size: 0;
+                    border-bottom: 1px solid #ffffff;
+                    padding: px2rem(1px) px2rem(45px) px2rem(1px);
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+        }
+
+        p {
+            font-family: 'MicrosoftYaHei';
+            font-size: px2rem(20px);
+        }
+    }
+
+
+
+}
+
+// 优势板块 
+.mid-advantage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: px2rem(0px) px2rem(54px) px2rem(74px);
+    background-color: #f7f7f7;
+
+    >h4 {
+        @include titlestyle();
+    }
+
+    >span {
+
+
+        &:nth-child(2) {
+            font-size: px2rem(28px);
+            color: $introcolor;
+            margin-top: px2rem(22px);
+            margin-bottom: px2rem(48px);
+        }
+
+    }
+
+    .mid-advlist {
+        display: flex;
+    }
+
+    .advitem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fff;
+        padding: px2rem(120px) px2rem(50px) px2rem(69px);
+        border-radius: px2rem(3px);
+        margin-right: px2rem(15px);
+
+        border: px2rem(2px) solid transparent;
+
+        &:hover {
+            border: px2rem(2px) solid #005fd5;
+        }
+
+        >img {
+            @include setWH(105px, 105px)
+        }
+
+        h4 {
+            text-align: center;
+            width: px2rem(252px);
+            font-family: 'MicrosoftYaHei-Bold';
+            font-size: px2rem(36px);
+            margin-top: px2rem(37px);
+            margin-bottom: px2rem(21px);
+            color: $introcolor;
+        }
+
+        span {
+            font-family: 'MicrosoftYaHei';
+            font-size: px2rem(20px);
+            color: $introcolor;
+
+            &:nth-child(2) {
+                // font-family: 'MicrosoftYaHei-Bold';
+                font-size: px2rem(36px);
+                margin-top: px2rem(37px);
+                margin-bottom: px2rem(21px);
+            }
+
+            &:nth-child(3) {
+                margin-bottom: px2rem(9px);
+            }
+        }
+    }
+}
+
+// 最新动态
+.mid-trends {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: px2rem(109px);
+
+    >h4 {
+        @include titlestyle();
+        margin-bottom: px2rem(69px);
+    }
+
+    >button {
+        @include setWH(288px, 74px);
+        border-radius: px2rem(6px);
+        border: solid 1px #005fd5;
+        background-color: #fff;
+        margin-top: px2rem(69px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            background-color: #005fd5;
+
+        }
+
+        &:hover a {
+            color: #ffffff;
+        }
+
+        a {
+            color: #005fd5;
+            font-size: px2rem(26px);
+            text-decoration: none;
+        }
+    }
+
+    // swiper
+
+    .swiper {
+        width: 100%;
+        height: px2rem(461px);
+    }
+
+    .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: visible !important;
+        // width: px2rem(905px) !important;
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        width: px2rem(905px);
+    }
+
+    .swiper-button-prev {
+        @include setWH(62px, 62px);
+        left: 20%;
+        background: url(../../image/lifthuise.png);
+        background-size: contain;
+
+        &:hover {
+            content: url(../../image/left.png);
+        }
+    }
+
+    .swiper-button-prev::after {
+        display: none;
+    }
+
+    .swiper-button-next {
+        @include setWH(62px, 62px);
+        right: 20%;
+        background: url(../../image/righthuise.png);
+        background-size: contain;
+
+        &:hover {
+            content: url(../../image/right.png);
+        }
+    }
+
+    .swiper-button-next::after {
+        display: none;
+    }
+}
+
+.footer {
+    background-color: #111b28;
+    display: flex;
+    flex-direction: column;
+    padding: px2rem(60px) px2rem(307px) px2rem(41px) px2rem(271px);
+    color: #ffffff;
+
+    .f-list {
+        display: flex;
+    }
+
+    .f-listitem {
+        // color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        margin-right: px2rem(166px);
+
+        &:nth-child(4) {
+            margin-right: 0;
+        }
+
+        span {
+            padding-bottom: px2rem(22px);
+
+            &:nth-child(1) {
+                font-size: px2rem(20px);
+                padding-bottom: px2rem(60px);
+            }
+        }
+
+        a {
+            color: #95989e;
+            text-decoration: none;
+            font-size: px2rem(16px);
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+    }
+
+
+    .f-contactus {
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        font-size: px2rem(20px);
+
+        >span {
+            &:nth-child(2) {
+                // font-size: px2rem(20px);
+                margin-top: px2rem(33px);
+            }
+
+
+            a {
+                color: #95989e;
+                text-decoration: none;
+                font-size: px2rem(16px);
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .f-contact {
+            padding: px2rem(22px) px2rem(0px) px2rem(75px);
+            border-top: 2px solid $introcolor;
+            border-bottom: 2px solid $introcolor;
+            margin-top: px2rem(13px);
+
+            span {
+                display: inline-block;
+                padding-bottom: px2rem(18px);
+            }
+        }
+
+        .f-linkbox {
+            a {
+                &:nth-child(1) {
+                    content: url(../../image/weixin.png);
+                    @include setWH(35px, 34px);
+                }
+
+                &:nth-child(2) {
+                    content: url(../../image/in.png);
+                    @include setWH(35px, 34px);
+                    padding-left: px2rem(15px);
+                }
+            }
+        }
+    }
+
+    .f-footnote {
+        margin-top: px2rem(115px);
+        padding-top: px2rem(15px);
+        border-top: px2rem(2px) solid $introcolor;
+        display: flex;
+
+        >div a {
+            color: #95989e;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        >span {
+            &:last-child {
+                margin-left: auto;
+                color: #95989e;
+            }
+        }
+
+        a+a::before {
+            display: inline-block;
+            content: "";
+            // font-size: 0;
+            margin-left: px2rem(10px);
+            margin-right: px2rem(10px);
+            border-left: px2rem(2px) solid #95989e;
+            height: 16px;
+            vertical-align: middle;
+        }
+    }
+}

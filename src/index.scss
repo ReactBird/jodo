@@ -1,0 +1,43 @@
+@import './mixin.scss';
+
+body {
+  margin: 0;
+  font-family: -apple-system, MicrosoftYaHei, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: px2rem(16px);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+html {
+  font-size: calc(100vw/10);
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 3px;
+    // background-color: red;
+
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #005fd5;
+    border-radius: 1px;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
